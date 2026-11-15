@@ -8,14 +8,17 @@
 <body>
     <h1><%= title %></h1>
     <ul>
-        <% messages.forEach((message) =>{  %>
-            <li>
-                <strong><%= message.user %>:</strong>
-                <%= message.text %>
-                <br>
-                <small>Posted on: <%= message.added %></small>
-            </li>
+        <% messages.forEach((message, index) =>{  %>
+            <a href="/message/<%= index %>">
+                <li>
+                    <strong><%= message.user %>:</strong>
+                    <%= message.text %>
+                    <br>
+                    <small>Posted on: <%= message.added %></small>
+                </li>
+            </a>
         <% }) %>
     </ul>
+    <a href="/new">New Message</a>
 </body>
 </html>
